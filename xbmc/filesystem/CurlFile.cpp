@@ -491,7 +491,8 @@ void CCurlFile::SetCommonOptions(CReadState* state)
   g_curlInterface.easy_setopt(h, CURLOPT_HEADERFUNCTION, header_callback);
   g_curlInterface.easy_setopt(h, CURLOPT_HEADER, FALSE);
 
-  g_curlInterface.easy_setopt(h, CURLOPT_FTP_USE_EPSV, 0); // turn off epsv
+  g_curlInterface.easy_setopt(h, CURLOPT_FTP_USE_PRET, 1); // turn on PRET
+  g_curlInterface.easy_setopt(h, CURLOPT_FTP_USE_EPSV, 1); // turn on epsv
 
   // Allow us to follow two redirects
   g_curlInterface.easy_setopt(h, CURLOPT_FOLLOWLOCATION, TRUE);
